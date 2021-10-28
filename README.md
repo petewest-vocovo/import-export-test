@@ -256,12 +256,6 @@ assert.deepStrictEqual({ ...wrappedModule }, {
 npx tsc -p ts-into-module-js && node ts-into-module-js/a.mjs
 ```
 
-or
-
-```bash
-npx ts-node ts-into-module-js/a.mjs
-```
-
 
 ## [Importing TS into Common JS](./ts-into-js)
 
@@ -290,12 +284,6 @@ assert.deepStrictEqual(wholeModule, {
 
 ```bash
 npx tsc -p ts-into-js && node ts-into-js/a.js
-```
-
-or
-
-```bash
-npx ts-node ts-into-js/a.js
 ```
 
 
