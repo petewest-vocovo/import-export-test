@@ -286,6 +286,10 @@ assert.deepStrictEqual(wholeModule, {
 npx tsc -p ts-into-js && node ts-into-js/a.js
 ```
 
+## Importing ES Module into Common JS
+
+Javascript doesn't allow this.
+
 
 ## Notes
 
