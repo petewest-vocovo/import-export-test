@@ -154,7 +154,7 @@ node js-into-es/a.mjs
 
 ## [Importing JS into an ES Module, reassigning `module.exports`](./js-reassigned-into-es)
 
-When `module.exports` has been reassigned, we cannot import its properties as named imports. This may be because the original `module.exports` object has some special properties.
+When `module.exports` has been reassigned, we cannot import its properties as named imports. This may be because the original `module.exports` object has some special properties. The wildcard import also does not include the named imports alongside the `default` property.
 
 Given `b.js`
 ```js
