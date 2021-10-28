@@ -186,12 +186,10 @@ import * as wrappedModule from './b.js'
 
 // Shallow clone here because `wrappedModule` is a Module object which we can't generate for testing
 assert.deepStrictEqual({ ...wrappedModule }, {
-  foo: 1,
-  bar: 2,
   default: {
     foo: 1,
     bar: 2,
-  },
+  }
 })
 ```
 
