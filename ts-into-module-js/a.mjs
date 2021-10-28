@@ -11,8 +11,14 @@ assert.deepStrictEqual(wholeModule, {
   bar: 2,
   default: { zim: 3 },
 })
-assert.deepStrictEqual(wrappedModule.default, {
+// Shallow clone here because `wrappedModule` is a Module object which we can't generate for testing
+assert.deepStrictEqual({ ...wrappedModule }, {
+  __esModule: true,
   foo: 1,
   bar: 2,
-  default: { zim: 3 },
+  default: {
+    foo: 1,
+    bar: 2,
+    default: { zim: 3 }
+  },
 })
