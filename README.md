@@ -99,42 +99,6 @@ npx ts-node js-into-ts-interop/a.ts
 ```
 
 
-## [Importing TS into Common JS](./ts-into-js)
-
-When importing Typescript modules into Common JS modules, Typescript compiles the module to an object with all named exports as properties, and the default export as the `default` property.
-
-Given `b.ts`
-```js
-export const foo = 1
-export const bar = 2
-export default { zim: 3 }
-```
-
-### Common JS import
-
-```js
-const wholeModule = require('./b')
-
-assert.deepStrictEqual(wholeModule, {
-  foo: 1,
-  bar: 2,
-  default: { zim: 3 },
-})
-```
-
-### Test code
-
-```bash
-npx tsc -p ts-into-js && node ts-into-js/a.js
-```
-
-or
-
-```bash
-npx ts-node ts-into-js/a.js
-```
-
-
 ## [Importing JS into an ES Module](./js-into-module-js)
 
 When we import a Common JS module into an ES Module, each property on `module.exports` is available as a named import. The default import imports the entire `module.exports` object, however this is not the case if `module.exports` was reassigned (see next section).
@@ -297,6 +261,43 @@ or
 ```bash
 npx ts-node ts-into-module-js/a.mjs
 ```
+
+
+## [Importing TS into Common JS](./ts-into-js)
+
+When importing Typescript modules into Common JS modules, Typescript compiles the module to an object with all named exports as properties, and the default export as the `default` property.
+
+Given `b.ts`
+```js
+export const foo = 1
+export const bar = 2
+export default { zim: 3 }
+```
+
+### Common JS import
+
+```js
+const wholeModule = require('./b')
+
+assert.deepStrictEqual(wholeModule, {
+  foo: 1,
+  bar: 2,
+  default: { zim: 3 },
+})
+```
+
+### Test code
+
+```bash
+npx tsc -p ts-into-js && node ts-into-js/a.js
+```
+
+or
+
+```bash
+npx ts-node ts-into-js/a.js
+```
+
 
 ## Notes
 
