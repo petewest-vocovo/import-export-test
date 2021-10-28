@@ -99,7 +99,7 @@ npx ts-node js-into-ts-interop/a.ts
 ```
 
 
-## [Importing JS into an ES Module](./js-into-module-js)
+## [Importing JS into an ES Module](./js-into-es)
 
 When we import a Common JS module into an ES Module, each property on `module.exports` is available as a named import. The default import imports the entire `module.exports` object, however this is not the case if `module.exports` was reassigned (see next section).
 
@@ -148,11 +148,11 @@ assert.deepStrictEqual({ ...wrappedModule }, {
 ### Test code
 
 ```bash
-node js-into-module-js/a.mjs
+node js-into-es/a.mjs
 ```
 
 
-## [Importing JS into an ES Module, reassigning `module.exports`](./js-reassigned-into-module-js)
+## [Importing JS into an ES Module, reassigning `module.exports`](./js-reassigned-into-es)
 
 Given `b.js`
 ```js
@@ -196,11 +196,11 @@ assert.deepStrictEqual({ ...wrappedModule }, {
 ### Test code
 
 ```bash
-node js-reassigned-into-module-js/a.mjs
+node js-reassigned-into-es/a.mjs
 ```
 
 
-## [Importing TS into an ES Module](./ts-into-module-js)
+## [Importing TS into an ES Module](./ts-into-es)
 
 When importing Typescript modules into ES Modules, named exports work as expected.
 The default export, which is compiled as a property on `module.exports`, is ignored by ES Modules, and instead they import the entirety of `module.exports` (similar to how `esModuleInterop` works).
@@ -253,7 +253,7 @@ assert.deepStrictEqual({ ...wrappedModule }, {
 ### Test code
 
 ```bash
-npx tsc -p ts-into-module-js && node ts-into-module-js/a.mjs
+npx tsc -p ts-into-es && node ts-into-es/a.mjs
 ```
 
 
